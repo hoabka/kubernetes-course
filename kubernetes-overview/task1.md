@@ -46,6 +46,9 @@ $ minikube start
 
 # Kiểm tra cluster xem đã được cài đặt thành công hay chưa
 $ kubectl get po -A
+
+# Kiểm tra thành phần của một cụm Cluster
+$ kubectl get pod -n kube-system
 ```
 
 ### Completed Task #1
