@@ -8,7 +8,7 @@ Trong task này, bạn được yêu cầu cài đặt **Helm** và thực hành
 | System | 2+ CPU, 2GB Free Memory, 20GB Free Disk | 
 | OS | Ubuntu 18.04 |  
 | K8s cluster | latest | 
-| [nginx-ingress controller for minikube](https://kubernetes.github.io/ingress-nginx/deploy/#minikube) | latest |
+| [nginx-ingress controller](https://kubernetes.github.io/ingress-nginx/deploy/#minikube) | latest |
   
   
 ## 1. Cài đặt Helm
@@ -59,9 +59,13 @@ $ helm list
 $ helm create mychart
 ```
 ### 2.4.  helm install
-- `helm install` cho phép khởi tạo chart
+- `helm install` cho phép install chart
 ```bash
 $ helm install mychart
+```
+- Thêm option `--debug và --dry-run` để verify syntax và debug, kiểm tra giá trị các biến
+```bash
+$ helm install --dry-run --debug mychart
 ```
 ## 3. Khởi tạo và cài đặt helm chart
 ### 3.1. Khởi tạo helm chart
