@@ -195,7 +195,7 @@ $ kubectl -n argocd get secret argocd-initial-admin-secret -o  jsonpath="{.data.
 ```
 - Sau khi setup xong có thể sử dụng được argocd UI với địa chỉ `https://IP:8443` và user admin và password lấy được ở bước trên
 
-![ArgoCD UIl](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/argocdui.JPG)
+![ArgoCD UIl](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/argocdui.JPG)
 
 
 ### 2.2. Setup ArgoCD repo
@@ -203,25 +203,25 @@ $ kubectl -n argocd get secret argocd-initial-admin-secret -o  jsonpath="{.data.
 
 - ADD Repo
 
-![Add repo](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/addRepo.JPG)
+![Add repo](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/addRepo.JPG)
 
 - Connect tới Repo sự dụng SSH
 
-![Connect SSH](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/connectSSHRepo.JPG)
+![Connect SSH](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/connectSSHRepo.JPG)
 
 ### 2.3. Setup ArgoCD application
 - `Application` trong argocd là khái niệm tương đồng với ứng dụng bạn muốn triển khai.
 - Tạo `Argo Application`
 
-![Create App](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/createapp_1.JPG)
+![Create App](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/createapp_1.JPG)
 
 - Add repo chứa `Helm Chart`
 
-![Create App](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/createapp_2.JPG)
+![Create App](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/createapp_2.JPG)
 
 - Chọn cụm K8s cluster, namespace để deploy application và chọn file `values` của `Helm chart`
 
-![Create App](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/createapp_3.JPG)
+![Create App](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/createapp_3.JPG)
 
 ## 3. Deploy Application
 ### 3.1.  Update application version
@@ -243,11 +243,11 @@ $ git push origin dev
 - Sử dụng giao diện của `argocd`
 - Click `Sync` button
 
-![Sync App](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/syncApp.JPG)
+![Sync App](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/syncApp.JPG)
 
 - Sync status
 
-![Sync Status](https://github.com/hoabka/kubernetes-course/kubernetes-cicd/images/syncAppStatus.JPG)
+![Sync Status](https://github.com/hoabka/kubernetes-course/blob/master/kubernetes-cicd/images/syncAppStatus.JPG)
 
 ### 3.4.  Verify ứng dụng sau khi được deploy
 ```bash
