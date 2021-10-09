@@ -36,6 +36,7 @@ Trong task này yêu cầu setup một CI/CD pipeline để triển khai một d
 | `GITHUB_CREDS`| Giá trị lưu SSH private key để truy cập tới Gitlab | 
 #### 1.2.2. Tạo Jenkinsfile
 Tạo Jenkinsfile theo các bước sau.
+
 **Step 0**:
 - Kéo sampleapp repo về local để thực hiện chỉnh sửa
 ```bash
