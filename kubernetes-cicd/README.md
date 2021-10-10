@@ -8,7 +8,7 @@ Trong task này yêu cầu setup một CI/CD pipeline để triển khai một d
 | System | 2+ CPU, 2GB Free Memory, 20GB Free Disk | 
 | OS | Ubuntu 18.04 |  
 | K8s cluster | latest | 
-| [nginx-ingress controller](https://kubernetes.github.io/ingress-nginx/deploy/#minikube) | latest |
+| `SSH Agent` Jenkins plugin| latest |
 | [ArgoCD](https://argo-cd.readthedocs.io/en/stable/getting_started/) | latest | 
   
   
@@ -107,11 +107,17 @@ stage('Get GIT_COMMIT') {
   <summary>Solution</summary>
   
   ```bash
- stage('Deploy') {
-	 steps {
-		 git branch: 'main', credentialsId: ${GITHUB_CREDSs}, url: YOUR_SSH_REPO
-	 }
- }
+    stage('Clone Helm Chart repo') {
+        steps {
+            dir('argo-cd') {
+                git branch: 'main', credentialsId: 'GITHUB_CREDS', url: YOUR_SSH_REPO
+                sh '''#!/usr/bin/env bash
+                    git config --global user.email "jenkins-ci@gitlab.com"
+                    git config --global user.name "jenkins-ci"
+                '''
+            }
+        }
+    }
   ```
 </details>
 
