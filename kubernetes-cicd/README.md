@@ -142,8 +142,8 @@ stage('Get GIT_COMMIT') {
 			 echo "Shell Process ID: $$"
 			 # Replace Repository and tag
 			 cd ./argo-cd/sampleapp
-			 sed -r "s/^(\s*repository\s*:\s*).*/\1${REGISTRY}\/sampleapp/" -i values-dev.yml
-			 sed -r "s/^(\s*tag\s*:\s*).*/\1${BRANCH}-${GIT_COMMIT}/" -i values-dev.yml
+			 sed -r "s/^(\s*repository\s*:\s*).*/\1${REGISTRY}\/sampleapp/" -i values-dev.yaml
+			 sed -r "s/^(\s*tag\s*:\s*).*/\1${BRANCH}-${GIT_COMMIT}/" -i values-dev.yaml
 			 git commit -am 'Publish new version' && git push || echo 'no changes'
 			 '''
 		 }
@@ -169,8 +169,8 @@ stage('Get GIT_COMMIT') {
 			 echo "Shell Process ID: $$"
 			 # Replace Repository and tag
 			 cd ./argo-cd/sampleapp
-			 sed -r "s/^(\s*repository\s*:\s*).*/\1${REGISTRY}\/sampleapp/" -i values-prod.yml
-			 sed -r "s/^(\s*tag\s*:\s*).*/\1${BRANCH}-${GIT_COMMIT}/" -i values-prod.yml
+			 sed -r "s/^(\s*repository\s*:\s*).*/\1${REGISTRY}\/sampleapp/" -i values-prod.yaml
+			 sed -r "s/^(\s*tag\s*:\s*).*/\1${BRANCH}-${GIT_COMMIT}/" -i values-prod.yaml
 			 git commit -am 'Publish new version' && git push || echo 'no changes'
 			 '''
 		 }
